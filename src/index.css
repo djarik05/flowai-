@@ -1,0 +1,100 @@
+@import "tailwindcss";
+
+@theme {
+  --color-gf-bg: #070B12;
+  --color-gf-bg-secondary: #0B1220;
+  --color-gf-glass: rgba(18, 29, 45, 0.62);
+  --color-gf-glass-border: rgba(148, 180, 210, 0.16);
+  --color-gf-cyan: #48DDF5;
+  --color-gf-green: #42F5A5;
+  --color-gf-blue: #448DFF;
+  --color-gf-purple: #9B7CFF;
+  --color-gf-text: #F1F5F9;
+  --color-gf-text-secondary: #91A4B8;
+  --color-gf-text-muted: #61758B;
+  --color-gf-error: #FF647C;
+  --color-gf-warning: #FFCB70;
+
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-gf-bg text-gf-text font-sans antialiased;
+    overflow-x: hidden;
+  }
+
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(148, 180, 210, 0.2) transparent;
+  }
+
+  *::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background: rgba(148, 180, 210, 0.2);
+    border-radius: 3px;
+  }
+
+  *::-webkit-scrollbar-thumb:hover {
+    background: rgba(148, 180, 210, 0.35);
+  }
+}
+
+@layer utilities {
+  .glass {
+    background: rgba(18, 29, 45, 0.62);
+    border: 1px solid rgba(148, 180, 210, 0.16);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+  }
+
+  .glass-light {
+    background: rgba(18, 29, 45, 0.35);
+    border: 1px solid rgba(148, 180, 210, 0.1);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  .glass-strong {
+    background: rgba(18, 29, 45, 0.8);
+    border: 1px solid rgba(148, 180, 210, 0.2);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+  }
+
+  .glow-cyan {
+    box-shadow: 0 0 20px rgba(72, 221, 245, 0.15), 0 0 40px rgba(72, 221, 245, 0.05);
+  }
+
+  .glow-green {
+    box-shadow: 0 0 20px rgba(66, 245, 165, 0.15), 0 0 40px rgba(66, 245, 165, 0.05);
+  }
+
+  .glow-cyan-sm {
+    box-shadow: 0 0 8px rgba(72, 221, 245, 0.2);
+  }
+
+  .text-gradient-cyan {
+    background: linear-gradient(135deg, #48DDF5, #42F5A5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .bg-radial-glow {
+    background: radial-gradient(ellipse at 50% 0%, rgba(72, 221, 245, 0.06) 0%, transparent 60%);
+  }
+}
