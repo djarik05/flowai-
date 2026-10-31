@@ -2,7 +2,7 @@
   "sample_id": "hagrid_fixture_uuid_002_test_h0",
   "gesture_id": "HG_LIKE",
   "gesture_name": "Like",
-  "timestamp": "2026-10-31T14:51:20.730754",
+  "timestamp": "2026-10-31T15:13:34.268839",
   "handedness": "Unknown",
   "handedness_confidence": 1.0,
   "landmarks": [
@@ -165,5 +165,5 @@
       ]
     }
   },
-  "imported_at": "2026-10-31T14:51:20.730754"
+  "imported_at": "2026-10-31T15:13:34.268839"
 }
