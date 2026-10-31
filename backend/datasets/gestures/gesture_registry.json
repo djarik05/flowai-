@@ -1,0 +1,80 @@
+[
+  {
+    "id": "G001",
+    "name": "Open Palm",
+    "description": "All five fingers extended openly with palm facing camera - Controls and moves desktop cursor",
+    "type": "static",
+    "action": "move_cursor",
+    "enabled": true,
+    "confidence_threshold": 0.8,
+    "icon": "Hand",
+    "is_default": true,
+    "created_at": "2026-10-30T10:10:03.335833",
+    "updated_at": "2026-10-31T14:15:00.000000"
+  },
+  {
+    "id": "G002",
+    "name": "Closed Fist",
+    "description": "All fingers tightly curled into palm forming a fist",
+    "type": "static",
+    "action": "no_action",
+    "enabled": true,
+    "confidence_threshold": 0.8,
+    "icon": "Grab",
+    "is_default": true,
+    "created_at": "2026-10-30T10:10:03.335833",
+    "updated_at": "2026-10-31T14:15:00.000000"
+  },
+  {
+    "id": "G003",
+    "name": "Thumbs Up",
+    "description": "Fist closed with thumb pointing straight upwards",
+    "type": "static",
+    "action": "no_action",
+    "enabled": true,
+    "confidence_threshold": 0.8,
+    "icon": "ArrowUp",
+    "is_default": true,
+    "created_at": "2026-10-30T10:10:03.335833",
+    "updated_at": "2026-10-31T14:15:00.000000"
+  },
+  {
+    "id": "G004",
+    "name": "Peace Sign",
+    "description": "Index and middle fingers extended apart in a V shape (Victory) - Triggers right click",
+    "type": "static",
+    "action": "right_click",
+    "enabled": true,
+    "confidence_threshold": 0.8,
+    "icon": "Sparkles",
+    "is_default": true,
+    "created_at": "2026-10-30T10:10:03.335833",
+    "updated_at": "2026-10-31T14:15:00.000000"
+  },
+  {
+    "id": "G005",
+    "name": "Pointing",
+    "description": "Index finger extended forward with other fingers curled - Triggers left click",
+    "type": "static",
+    "action": "left_click",
+    "enabled": true,
+    "confidence_threshold": 0.8,
+    "icon": "MousePointer",
+    "is_default": true,
+    "created_at": "2026-10-30T10:10:03.335833",
+    "updated_at": "2026-10-31T14:15:00.000000"
+  },
+  {
+    "id": "G006",
+    "name": "Stop",
+    "description": "Open hand held vertically with palm directed forward toward camera",
+    "type": "static",
+    "action": "no_action",
+    "enabled": true,
+    "confidence_threshold": 0.8,
+    "icon": "CircleDot",
+    "is_default": true,
+    "created_at": "2026-10-30T10:10:03.335833",
+    "updated_at": "2026-10-31T14:15:00.000000"
+  }
+]

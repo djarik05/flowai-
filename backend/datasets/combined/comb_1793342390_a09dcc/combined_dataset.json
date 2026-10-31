@@ -1,0 +1,263 @@
+{
+  "combined_id": "comb_1793342390_a09dcc",
+  "name": "IntegrationCombinedTest",
+  "created_at": "2026-10-30T12:09:50.027541",
+  "total_samples": 2,
+  "splits_count": {
+    "train": 1,
+    "val": 1,
+    "test": 0
+  },
+  "unique_subjects": 2,
+  "coordinate_format": "normalized_2d",
+  "landmark_dimension": 2,
+  "classes": [
+    "HG_PALM",
+    "HG_LIKE"
+  ],
+  "sample_counts_by_class": {
+    "HG_PALM": 1,
+    "HG_LIKE": 1
+  },
+  "attribution": {
+    "dataset": "HaGRIDv2",
+    "full_title": "HaGRIDv2: 1M Images for Static and Dynamic Hand Gesture Recognition",
+    "license": "Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "license_notice": "This dataset is derived from HaGRIDv2 (HAnd Gesture Recognition Image Dataset) created by Alexander Kapitanov, Andrey Makhlyarchuk, Karina Kvanchiani, Aleksandr Nagaev, Roman Kraynov, and Anton Nuzhdin, licensed under CC BY-SA 4.0.",
+    "repository": "https://github.com/hukenovs/hagrid",
+    "paper": "https://arxiv.org/abs/2412.01508"
+  },
+  "samples": [
+    {
+      "sample_id": "hagrid_fixture_uuid_001_test_h0",
+      "gesture_id": "HG_PALM",
+      "gesture_name": "Palm",
+      "source": "hagrid",
+      "subject_id": "test_user_alpha",
+      "landmarks": [
+        {
+          "index": 0,
+          "x": 0.25,
+          "y": 0.25
+        },
+        {
+          "index": 1,
+          "x": 0.255,
+          "y": 0.255
+        },
+        {
+          "index": 2,
+          "x": 0.26,
+          "y": 0.26
+        },
+        {
+          "index": 3,
+          "x": 0.265,
+          "y": 0.265
+        },
+        {
+          "index": 4,
+          "x": 0.27,
+          "y": 0.27
+        },
+        {
+          "index": 5,
+          "x": 0.275,
+          "y": 0.275
+        },
+        {
+          "index": 6,
+          "x": 0.28,
+          "y": 0.28
+        },
+        {
+          "index": 7,
+          "x": 0.28500000000000003,
+          "y": 0.28500000000000003
+        },
+        {
+          "index": 8,
+          "x": 0.29,
+          "y": 0.29
+        },
+        {
+          "index": 9,
+          "x": 0.295,
+          "y": 0.295
+        },
+        {
+          "index": 10,
+          "x": 0.3,
+          "y": 0.3
+        },
+        {
+          "index": 11,
+          "x": 0.305,
+          "y": 0.305
+        },
+        {
+          "index": 12,
+          "x": 0.31,
+          "y": 0.31
+        },
+        {
+          "index": 13,
+          "x": 0.315,
+          "y": 0.315
+        },
+        {
+          "index": 14,
+          "x": 0.32,
+          "y": 0.32
+        },
+        {
+          "index": 15,
+          "x": 0.325,
+          "y": 0.325
+        },
+        {
+          "index": 16,
+          "x": 0.33,
+          "y": 0.33
+        },
+        {
+          "index": 17,
+          "x": 0.335,
+          "y": 0.335
+        },
+        {
+          "index": 18,
+          "x": 0.33999999999999997,
+          "y": 0.33999999999999997
+        },
+        {
+          "index": 19,
+          "x": 0.345,
+          "y": 0.345
+        },
+        {
+          "index": 20,
+          "x": 0.35,
+          "y": 0.35
+        }
+      ],
+      "split": "train"
+    },
+    {
+      "sample_id": "hagrid_fixture_uuid_002_test_h0",
+      "gesture_id": "HG_LIKE",
+      "gesture_name": "Like",
+      "source": "hagrid",
+      "subject_id": "test_user_beta",
+      "landmarks": [
+        {
+          "index": 0,
+          "x": 0.45,
+          "y": 0.45
+        },
+        {
+          "index": 1,
+          "x": 0.455,
+          "y": 0.455
+        },
+        {
+          "index": 2,
+          "x": 0.46,
+          "y": 0.46
+        },
+        {
+          "index": 3,
+          "x": 0.465,
+          "y": 0.465
+        },
+        {
+          "index": 4,
+          "x": 0.47000000000000003,
+          "y": 0.47000000000000003
+        },
+        {
+          "index": 5,
+          "x": 0.47500000000000003,
+          "y": 0.47500000000000003
+        },
+        {
+          "index": 6,
+          "x": 0.48,
+          "y": 0.48
+        },
+        {
+          "index": 7,
+          "x": 0.485,
+          "y": 0.485
+        },
+        {
+          "index": 8,
+          "x": 0.49,
+          "y": 0.49
+        },
+        {
+          "index": 9,
+          "x": 0.495,
+          "y": 0.495
+        },
+        {
+          "index": 10,
+          "x": 0.5,
+          "y": 0.5
+        },
+        {
+          "index": 11,
+          "x": 0.505,
+          "y": 0.505
+        },
+        {
+          "index": 12,
+          "x": 0.51,
+          "y": 0.51
+        },
+        {
+          "index": 13,
+          "x": 0.515,
+          "y": 0.515
+        },
+        {
+          "index": 14,
+          "x": 0.52,
+          "y": 0.52
+        },
+        {
+          "index": 15,
+          "x": 0.525,
+          "y": 0.525
+        },
+        {
+          "index": 16,
+          "x": 0.53,
+          "y": 0.53
+        },
+        {
+          "index": 17,
+          "x": 0.535,
+          "y": 0.535
+        },
+        {
+          "index": 18,
+          "x": 0.54,
+          "y": 0.54
+        },
+        {
+          "index": 19,
+          "x": 0.545,
+          "y": 0.545
+        },
+        {
+          "index": 20,
+          "x": 0.55,
+          "y": 0.55
+        }
+      ],
+      "split": "val"
+    }
+  ]
+}

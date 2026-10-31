@@ -1,0 +1,143 @@
+{
+  "model_id": "model_mlp_1793344341_d951",
+  "model_name": "Test Static MLP",
+  "version": "1.0.0",
+  "created_at": "2026-10-30T12:42:21.030710",
+  "dataset_version": "ds_1793344341",
+  "classes": [
+    {
+      "id": "G001",
+      "name": "Open Palm"
+    },
+    {
+      "id": "G002",
+      "name": "Closed Fist"
+    },
+    {
+      "id": "G003",
+      "name": "Thumbs Up"
+    },
+    {
+      "id": "G004",
+      "name": "Peace Sign"
+    },
+    {
+      "id": "G005",
+      "name": "Pointing"
+    }
+  ],
+  "feature_schema": "landmarks_3d_wrist_relative_scale_normalized",
+  "feature_dim": 63,
+  "preprocessing_config": {
+    "mode": "3d",
+    "feature_dim": 63,
+    "scale_normalized": true,
+    "wrist_relative": true,
+    "reference_bone": "wrist_to_middle_mcp (0 to 9)"
+  },
+  "training_config": {
+    "gesture_ids": null,
+    "model_name": "Test Static MLP",
+    "hidden_layers": [
+      128,
+      64
+    ],
+    "dropout_rates": [
+      0.25,
+      0.2
+    ],
+    "epochs": 15,
+    "batch_size": 16,
+    "learning_rate": 0.005,
+    "train_split": 0.7,
+    "val_split": 0.15,
+    "test_split": 0.15,
+    "confidence_threshold": 0.6,
+    "session_aware_split": true
+  },
+  "metrics": {
+    "accuracy": 0.0,
+    "precision_macro": 0.0,
+    "recall_macro": 0.0,
+    "f1_macro": 0.0,
+    "confusion_matrix": [
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        15,
+        0,
+        0,
+        0
+      ]
+    ],
+    "class_labels": [
+      "Open Palm",
+      "Closed Fist",
+      "Thumbs Up",
+      "Peace Sign",
+      "Pointing"
+    ],
+    "per_class": {
+      "Open Palm": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0,
+        "support": 0
+      },
+      "Closed Fist": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0,
+        "support": 0
+      },
+      "Thumbs Up": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0,
+        "support": 0
+      },
+      "Peace Sign": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0,
+        "support": 0
+      },
+      "Pointing": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0,
+        "support": 15
+      }
+    },
+    "test_samples_count": 15
+  },
+  "model_file": "C:\\Users\\SONTU ZARIKA\\Desktop\\flowai\\backend\\models\\classifiers\\model_mlp_1793344341_d951\\weights.npz",
+  "is_active": true
+}

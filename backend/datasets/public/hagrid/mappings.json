@@ -1,0 +1,58 @@
+{
+  "palm": {
+    "hagrid_class": "palm",
+    "target_gesture_id": "G001",
+    "target_gesture_name": null,
+    "action": "map",
+    "confidence_threshold": 0.8
+  },
+  "fist": {
+    "hagrid_class": "fist",
+    "target_gesture_id": null,
+    "target_gesture_name": null,
+    "action": "map",
+    "confidence_threshold": 0.8
+  },
+  "like": {
+    "hagrid_class": "like",
+    "target_gesture_id": null,
+    "target_gesture_name": null,
+    "action": "map",
+    "confidence_threshold": 0.8
+  },
+  "peace": {
+    "hagrid_class": "peace",
+    "target_gesture_id": null,
+    "target_gesture_name": null,
+    "action": "map",
+    "confidence_threshold": 0.8
+  },
+  "point": {
+    "hagrid_class": "point",
+    "target_gesture_id": null,
+    "target_gesture_name": null,
+    "action": "map",
+    "confidence_threshold": 0.8
+  },
+  "one": {
+    "hagrid_class": "one",
+    "target_gesture_id": null,
+    "target_gesture_name": null,
+    "action": "map",
+    "confidence_threshold": 0.8
+  },
+  "stop": {
+    "hagrid_class": "stop",
+    "target_gesture_id": null,
+    "target_gesture_name": null,
+    "action": "map",
+    "confidence_threshold": 0.8
+  },
+  "no_gesture": {
+    "hagrid_class": "no_gesture",
+    "target_gesture_id": null,
+    "target_gesture_name": null,
+    "action": "skip",
+    "confidence_threshold": 0.8
+  }
+}

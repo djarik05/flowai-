@@ -8,11 +8,16 @@ import {
   ControllerSettings,
   DragDropSettings,
   BackgroundSettings,
+  toBackendMouseSettings,
+  fromBackendMouseSettings,
 } from '../types/settings';
+import { DatasetApi } from '../services/api/dataset';
+import { MouseApi } from '../services/api/mouse';
 
 const SETTINGS_STORAGE_KEY = 'gestureflow_settings_v1';
 
 interface SettingsStore {
+  // Settings
   settings: AppSettings;
   updateGeneral: (updates: Partial<GeneralSettings>) => void;
   updateCamera: (updates: Partial<CameraSettings>) => void;
@@ -21,6 +26,10 @@ interface SettingsStore {
   updateDragDrop: (updates: Partial<DragDropSettings>) => void;
   updateBackground: (updates: Partial<BackgroundSettings>) => void;
   resetAll: () => void;
+
+  // Backend sync for mouse controller settings
+  syncMouseSettingsToBackend: () => Promise<void>;
+  syncMouseSettingsFromBackend: () => Promise<void>;
 }
 
 const loadPersistedSettings = (): AppSettings => {
@@ -91,6 +100,11 @@ export const useSettingsStore = create<SettingsStore>((set, get) => ({
     };
     saveSettings(newSettings);
     set({ settings: newSettings });
+
+    // Sync to backend if controller is enabled
+    if (get().settings.controller.enabled) {
+      get().syncMouseSettingsToBackend().catch(console.warn);
+    }
   },
 
   updateDragDrop: (updates) => {
@@ -114,5 +128,43 @@ export const useSettingsStore = create<SettingsStore>((set, get) => ({
   resetAll: () => {
     saveSettings(DEFAULT_SETTINGS);
     set({ settings: DEFAULT_SETTINGS });
+  },
+
+  syncMouseSettingsToBackend: async () => {
+    const controller = get().settings.controller;
+    try {
+      const { MouseApi } = await import('../services/api/mouse');
+      const backendSettings = {
+        sensitivity: controller.cursorSensitivity * 2.0,
+        smoothing_alpha: 1.0 - controller.movementSmoothing,
+        active_margin_x: 0.15,
+        active_margin_y: 0.15,
+        dead_zone: controller.deadZone,
+        tracking_timeout_ms: 150,
+      };
+      await MouseApi.updateSettings(backendSettings);
+    } catch (err) {
+      console.warn('Failed to sync mouse settings to backend:', err);
+    }
+  },
+
+  syncMouseSettingsFromBackend: async () => {
+    try {
+      const { MouseApi } = await import('../services/api/mouse');
+      const status = await MouseApi.getStatus();
+      const updates = {
+        cursorSensitivity: status.sensitivity / 2.0,
+        movementSmoothing: 1.0 - status.smoothing_alpha,
+        deadZone: status.dead_zone,
+      };
+      set((state) => ({
+        settings: {
+          ...state.settings,
+          controller: { ...state.settings.controller, ...updates },
+        },
+      }));
+    } catch (err) {
+      console.warn('Failed to sync mouse settings from backend:', err);
+    }
   },
 }));

@@ -32,6 +32,8 @@ const NAV_ITEMS: NavItem[] = [
   { id: 'settings', label: 'Settings', icon: Settings },
 ];
 
+import { useMouseStore } from '../../store/mouseStore';
+
 export const Header: React.FC = () => {
   const { currentView, setCurrentView, setUIMinimized, trackingStatus } = useAppStore();
   const { settings, updateController } = useSettingsStore();
@@ -39,11 +41,13 @@ export const Header: React.FC = () => {
 
   const handleEmergencyStop = () => {
     updateController({ enabled: false });
+    // Phase 6A.3: Immediate hardware emergency stop on backend
+    useMouseStore.getState().emergencyStop().catch(console.error);
     addLog({
       category: 'controller',
-      description: 'Emergency Stop triggered: Simulated air mouse and clicks halted',
+      description: 'Emergency Stop triggered: Desktop mouse control halted immediately',
       status: 'error',
-      isSimulated: true,
+      isSimulated: false,
     });
   };
 

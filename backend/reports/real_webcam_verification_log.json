@@ -1,0 +1,9 @@
+{
+  "verified_at": "2026-10-30T13:09:41.299282",
+  "model_id": "model_mlp_1793344397_26bb",
+  "model_name": "GestureFlow MLP v1",
+  "frames_processed": 145,
+  "average_fps": 30.38,
+  "total_detections": 0,
+  "samples": []
+}

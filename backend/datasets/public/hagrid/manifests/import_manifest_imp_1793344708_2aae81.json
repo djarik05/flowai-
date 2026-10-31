@@ -1,0 +1,24 @@
+{
+  "import_id": "imp_1793344708_2aae81",
+  "dataset": "HaGRIDv2",
+  "imported_at": "2026-10-30T12:48:28.766221",
+  "total_samples": 2,
+  "class_distribution": {
+    "HG_PALM": 1,
+    "HG_LIKE": 1
+  },
+  "splits": [
+    "train"
+  ],
+  "coordinate_format": "hagrid_normalized_2d",
+  "landmark_dimension": 2,
+  "attribution": {
+    "dataset": "HaGRIDv2",
+    "full_title": "HaGRIDv2: 1M Images for Static and Dynamic Hand Gesture Recognition",
+    "license": "Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "license_notice": "This dataset is derived from HaGRIDv2 (HAnd Gesture Recognition Image Dataset) created by Alexander Kapitanov, Andrey Makhlyarchuk, Karina Kvanchiani, Aleksandr Nagaev, Roman Kraynov, and Anton Nuzhdin, licensed under CC BY-SA 4.0.",
+    "repository": "https://github.com/hukenovs/hagrid",
+    "paper": "https://arxiv.org/abs/2412.01508"
+  }
+}

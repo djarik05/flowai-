@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 import { InitState, InitStep, DEFAULT_INIT_STEPS } from '../types/initialization';
-import { GestureRecognitionStatus, DetectedGesture } from '../types/gesture';
+import { GestureRecognitionStatus, DetectedGesture, RecognitionLifecycleState } from '../types/gesture';
 
 export type AppView =
   | 'initialization'
@@ -30,11 +30,12 @@ interface AppStore {
   setUIMinimized: (minimized: boolean) => void;
   toggleDemoCycling: () => void;
   
-  // Simulated tracking status
+  // Tracking status & recognition lifecycle
   trackingStatus: GestureRecognitionStatus;
   setDetectedGesture: (gesture: DetectedGesture | null) => void;
   setFps: (fps: number) => void;
   setHandDetected: (detected: boolean) => void;
+  setRecognitionState: (state: RecognitionLifecycleState, message?: string) => void;
 }
 
 const LOCAL_STORAGE_AUTO_START_KEY = 'gestureflow_autostart_pref';
@@ -45,7 +46,7 @@ export const useAppStore = create<AppStore>((set, get) => {
   return {
     currentView: 'initialization',
     isUIMinimized: false,
-    isDemoCycling: true,
+    isDemoCycling: false,
 
     initState: {
       status: 'idle',
@@ -159,25 +160,23 @@ export const useAppStore = create<AppStore>((set, get) => {
 
     trackingStatus: {
       isActive: true,
-      currentGesture: {
-        gestureId: 'index_finger',
-        name: 'Index Finger (Point)',
-        confidence: 0.94,
-        timestamp: Date.now(),
-        action: 'move_cursor',
-      },
+      currentGesture: null,
       lastGesture: null,
       fps: 30,
-      handDetected: true,
-      landmarkCount: 21,
+      handDetected: false,
+      landmarkCount: 0,
+      recognitionState: 'no_hand',
+      stateMessage: 'No hand detected',
     },
 
     setDetectedGesture: (gesture: DetectedGesture | null) => {
       set((state) => ({
         trackingStatus: {
           ...state.trackingStatus,
-          lastGesture: state.trackingStatus.currentGesture,
+          lastGesture: gesture ? gesture : state.trackingStatus.lastGesture,
           currentGesture: gesture,
+          recognitionState: gesture ? 'recognized' : (state.trackingStatus.handDetected ? 'unknown' : 'no_hand'),
+          stateMessage: gesture ? gesture.name : (state.trackingStatus.handDetected ? 'Hand detected' : 'No hand detected'),
         },
       }));
     },
@@ -194,6 +193,22 @@ export const useAppStore = create<AppStore>((set, get) => {
           ...state.trackingStatus,
           handDetected: detected,
           landmarkCount: detected ? 21 : 0,
+          recognitionState: detected
+            ? (state.trackingStatus.currentGesture ? 'recognized' : 'hand_detected')
+            : 'no_hand',
+          stateMessage: detected
+            ? (state.trackingStatus.currentGesture?.name || 'Hand detected')
+            : 'No hand detected',
+        },
+      }));
+    },
+
+    setRecognitionState: (recognitionState: RecognitionLifecycleState, message?: string) => {
+      set((state) => ({
+        trackingStatus: {
+          ...state.trackingStatus,
+          recognitionState,
+          stateMessage: message || state.trackingStatus.stateMessage,
         },
       }));
     },

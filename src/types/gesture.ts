@@ -46,6 +46,10 @@ export interface GestureDefinition {
   isDefault: boolean;
   icon: string; // Lucide icon name
   customShortcut?: string;
+  sampleCount?: number;
+  sample_count?: number;
+  created_at?: string;
+  updated_at?: string;
 }
 
 export interface DetectedGesture {
@@ -56,6 +60,14 @@ export interface DetectedGesture {
   action: GestureAction;
 }
 
+export type RecognitionLifecycleState =
+  | 'no_hand'
+  | 'hand_detected'
+  | 'classifying'
+  | 'recognized'
+  | 'unknown'
+  | 'error';
+
 export interface GestureRecognitionStatus {
   isActive: boolean;
   currentGesture: DetectedGesture | null;
@@ -63,4 +75,6 @@ export interface GestureRecognitionStatus {
   fps: number;
   handDetected: boolean;
   landmarkCount: number;
+  recognitionState?: RecognitionLifecycleState;
+  stateMessage?: string;
 }

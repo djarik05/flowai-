@@ -1,0 +1,169 @@
+{
+  "sample_id": "hagrid_fixture_uuid_002_test_h0",
+  "gesture_id": "HG_LIKE",
+  "gesture_name": "Like",
+  "timestamp": "2026-10-31T14:51:20.730754",
+  "handedness": "Unknown",
+  "handedness_confidence": 1.0,
+  "landmarks": [
+    {
+      "index": 0,
+      "x": 0.45,
+      "y": 0.45,
+      "z": null
+    },
+    {
+      "index": 1,
+      "x": 0.455,
+      "y": 0.455,
+      "z": null
+    },
+    {
+      "index": 2,
+      "x": 0.46,
+      "y": 0.46,
+      "z": null
+    },
+    {
+      "index": 3,
+      "x": 0.465,
+      "y": 0.465,
+      "z": null
+    },
+    {
+      "index": 4,
+      "x": 0.47000000000000003,
+      "y": 0.47000000000000003,
+      "z": null
+    },
+    {
+      "index": 5,
+      "x": 0.47500000000000003,
+      "y": 0.47500000000000003,
+      "z": null
+    },
+    {
+      "index": 6,
+      "x": 0.48,
+      "y": 0.48,
+      "z": null
+    },
+    {
+      "index": 7,
+      "x": 0.485,
+      "y": 0.485,
+      "z": null
+    },
+    {
+      "index": 8,
+      "x": 0.49,
+      "y": 0.49,
+      "z": null
+    },
+    {
+      "index": 9,
+      "x": 0.495,
+      "y": 0.495,
+      "z": null
+    },
+    {
+      "index": 10,
+      "x": 0.5,
+      "y": 0.5,
+      "z": null
+    },
+    {
+      "index": 11,
+      "x": 0.505,
+      "y": 0.505,
+      "z": null
+    },
+    {
+      "index": 12,
+      "x": 0.51,
+      "y": 0.51,
+      "z": null
+    },
+    {
+      "index": 13,
+      "x": 0.515,
+      "y": 0.515,
+      "z": null
+    },
+    {
+      "index": 14,
+      "x": 0.52,
+      "y": 0.52,
+      "z": null
+    },
+    {
+      "index": 15,
+      "x": 0.525,
+      "y": 0.525,
+      "z": null
+    },
+    {
+      "index": 16,
+      "x": 0.53,
+      "y": 0.53,
+      "z": null
+    },
+    {
+      "index": 17,
+      "x": 0.535,
+      "y": 0.535,
+      "z": null
+    },
+    {
+      "index": 18,
+      "x": 0.54,
+      "y": 0.54,
+      "z": null
+    },
+    {
+      "index": 19,
+      "x": 0.545,
+      "y": 0.545,
+      "z": null
+    },
+    {
+      "index": 20,
+      "x": 0.55,
+      "y": 0.55,
+      "z": null
+    }
+  ],
+  "session_id": "hagrid_import_test",
+  "features": null,
+  "source": "hagrid",
+  "source_dataset_version": "HaGRIDv2",
+  "source_image_id": "fixture_uuid_002",
+  "source_split": "test",
+  "source_user_id": "test_user_beta",
+  "coordinate_format": "hagrid_normalized_2d",
+  "landmark_dimension": 2,
+  "annotations": {
+    "hagrid_class": "like",
+    "bbox": [
+      0.4,
+      0.4,
+      0.2,
+      0.2
+    ],
+    "is_two_handed": null,
+    "hand_index": 0,
+    "total_hands": 1,
+    "user_meta": {
+      "age": [
+        32.0
+      ],
+      "gender": [
+        "male"
+      ],
+      "race": [
+        "Asian"
+      ]
+    }
+  },
+  "imported_at": "2026-10-31T14:51:20.730754"
+}

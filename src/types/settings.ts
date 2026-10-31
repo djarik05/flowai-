@@ -24,9 +24,9 @@ export interface RecognitionSettings {
 
 export interface ControllerSettings {
   enabled: boolean;
-  cursorSensitivity: number;
-  movementSmoothing: number;
-  deadZone: number;
+  cursorSensitivity: number;        // Maps to backend sensitivity (0.1-2.0 -> 0.1-5.0)
+  movementSmoothing: number;        // Maps to backend smoothing_alpha (inverted: higher = smoother)
+  deadZone: number;                 // Maps to backend dead_zone (0.0-0.3)
   scrollSpeed: number;
   dragSensitivity: number;
   clickCooldown: number;
@@ -60,6 +60,41 @@ export interface AppSettings {
   dragDrop: DragDropSettings;
   background: BackgroundSettings;
   version: number;
+}
+
+// Conversion helpers for backend API
+export function toBackendMouseSettings(frontend: ControllerSettings): {
+  sensitivity: number;
+  smoothing_alpha: number;
+  active_margin_x: number;
+  active_margin_y: number;
+  dead_zone: number;
+  tracking_timeout_ms: number;
+} {
+  return {
+    sensitivity: frontend.cursorSensitivity * 2.0,           // 0.1-2.0 -> 0.2-4.0 (clamped to 0.1-5.0)
+    smoothing_alpha: 1.0 - frontend.movementSmoothing,       // 0.1-0.95 -> 0.9-0.05 (inverted)
+    active_margin_x: 0.15,                                   // Fixed for now
+    active_margin_y: 0.15,                                   // Fixed for now
+    dead_zone: frontend.deadZone,                             // 1:1 mapping
+    tracking_timeout_ms: 150,                                 // Fixed for now
+  };
+}
+
+export function fromBackendMouseSettings(backend: {
+  sensitivity: number;
+  smoothing_alpha: number;
+  active_margin_x: number;
+  active_margin_y: number;
+  dead_zone: number;
+  tracking_timeout_ms: number;
+}): Partial<ControllerSettings> {
+  return {
+    cursorSensitivity: Math.max(0.1, Math.min(2.0, backend.sensitivity / 2.0)),
+    movementSmoothing: Math.max(0.01, Math.min(0.99, 1.0 - backend.smoothing_alpha)),
+    deadZone: Math.max(0.0, Math.min(0.3, backend.dead_zone)),
+    // Note: active_margin_x, active_margin_y, tracking_timeout_ms not exposed in frontend yet
+  };
 }
 
 export const DEFAULT_SETTINGS: AppSettings = {
